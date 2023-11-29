@@ -32,7 +32,7 @@ class MySaveImage:
         for count, image in enumerate(images):
             i = 255 * image.cpu().numpy()
             img = Image.fromarray(np.clip(i, 0, 255).astype(np.uint8))
-            file = f"{filename}_{count:05}.png"
+            file = f"{filename}_{count:02}.png"
             img.save(os.path.join(outdir, file), compress_level=4)
             results.append(
                 {
